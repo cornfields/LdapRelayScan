@@ -1,3 +1,24 @@
+This fork of LdapRelayScan introduces several enhancements and refinements to improve functionality, usability, and maintainability. Key updates include:
+
+#### Improved TLS Handling for LDAPS Handshake
+Replaced the outdated ssl.wrap_socket method with a more robust ssl.SSLContext approach for better TLS handshake reliability.
+
+#### Refactored LDAPS Channel Binding Miscalculation
+Simplified the miscalculated "Channel Bindings" AV pair in Type 3 NTLM messages for better readability and performance.
+
+#### Added Domain Specification Option (-d/--domain)
+Allows users to manually specify a domain instead of relying solely on automatic discovery.
+
+#### Introduced Single DC Targeting (-target)
+Enables checking a specific Domain Controller instead of all discovered DCs.
+
+#### Code Cleanup & Optimizations
+Removed redundant exit() calls.
+Standardized exception handling for better error reporting.
+Streamlined bind() logic to improve readability and reduce unnecessary conditions.
+
+
+
 
 # LDAP Relay Scan 
 A tool to check Domain Controllers for LDAP server protections regarding the relay of NTLM authentication. If you're interested in the specifics of the error-based enumeration, see [below](https://github.com/zyn3rgy/LdapRelayScan#error-based-enumeration-specifics). For details regarding what can be done when you identify a lack of LDAP protections, see the [references section](https://github.com/zyn3rgy/LdapRelayScan#references).
